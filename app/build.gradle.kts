@@ -25,7 +25,7 @@ kapt {
     }
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+tasks.withType < org.jetbrains.kotlin.gradle.tasks.KotlinCompile > {
     kotlinOptions.jvmTarget = "1.8"
 }
 
@@ -74,9 +74,9 @@ android {
             versionNameSuffix = " DEV"
             applicationIdSuffix = ".dev"
             buildConfigField(
-                "long",
-                "BUILD_TIME",
-                "0l"
+                    "long",
+                    "BUILD_TIME",
+                    "0l"
             ) // to improve build times, do allow change on every build
         }
     }
@@ -109,6 +109,7 @@ dependencies {
     implementation(Deps.KOTLIN_SERIALIZATION)
     implementation(Deps.COROUTINES_CORE)
     implementation(Deps.COROUTINES_ANDROID)
+    implementation(Deps.COROUTINES_PLAY_SERVICES)
     implementation(Deps.TIMBER)
 
     implementation(Deps.FIREBASE_COMMON_KTX)
@@ -138,3 +139,5 @@ tasks.register("incrementVersionCode") {
 }
 
 apply(plugin = "androidx.navigation.safeargs.kotlin")
+apply(plugin = "com.google.gms.google-services")
+apply(plugin = "com.google.firebase.crashlytics")

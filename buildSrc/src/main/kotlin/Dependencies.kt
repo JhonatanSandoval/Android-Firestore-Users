@@ -40,6 +40,8 @@ object Deps {
     private const val COROUTINES_VERSION = "1.3.3"
     const val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_VERSION"
     const val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
+    const val COROUTINES_PLAY_SERVICES = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$COROUTINES_VERSION" // for "firebase coroutines"
+
     const val TIMBER = "com.jakewharton.timber:timber:4.7.1"
 
     private const val VIEWMODEL_INJECT_VERSION = "0.3.2-rc01"
