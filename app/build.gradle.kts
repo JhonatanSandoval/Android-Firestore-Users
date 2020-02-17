@@ -116,13 +116,11 @@ dependencies {
     implementation(Deps.FIREBASE_DB)
     implementation(Deps.FIREBASE_CRASHLYTICS)
 
-    implementation(Deps.DAGGER)
+    implementation(Deps.KOIN)
+    implementation(Deps.KOIN_VIEWMODEL)
+
     implementation(Deps.NAVIGATION_FRAGMENT_KTX)
     implementation(Deps.NAVIGATION_UI_KTX)
-    kapt(Deps.DAGGER_COMPILER)
-
-    implementation(Deps.VIEWMODEL_INJECT)
-    kapt(Deps.VIEWMODEL_INJECT_PROCESSOR)
 
     implementation(Deps.ARCH_LIFECYCLE_EXT)
     implementation(Deps.ARCH_LIFECYCLE_RUNTIME)

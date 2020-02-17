@@ -31,9 +31,9 @@ object Deps {
 
     const val ANDROID_MATERIAL = "com.google.android.material:material:1.1.0-beta02"
 
-    private const val DAGGER_VERSION = "2.25.2"
-    const val DAGGER = "com.google.dagger:dagger:$DAGGER_VERSION"
-    const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    private const val KOIN_VERSION = "2.0.0"
+    const val KOIN = "org.koin:koin-android:$KOIN_VERSION"
+    const val KOIN_VIEWMODEL = "org.koin:koin-android-viewmodel:$KOIN_VERSION"
 
     const val KOTLIN_STD_LIB = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
     const val KOTLIN_SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.13.0"
@@ -43,9 +43,5 @@ object Deps {
     const val COROUTINES_PLAY_SERVICES = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$COROUTINES_VERSION" // for "firebase coroutines"
 
     const val TIMBER = "com.jakewharton.timber:timber:4.7.1"
-
-    private const val VIEWMODEL_INJECT_VERSION = "0.3.2-rc01"
-    const val VIEWMODEL_INJECT = "com.vikingsen.inject:viewmodel-inject:$VIEWMODEL_INJECT_VERSION"
-    const val VIEWMODEL_INJECT_PROCESSOR = "com.vikingsen.inject:viewmodel-inject-processor:$VIEWMODEL_INJECT_VERSION"
 
 }

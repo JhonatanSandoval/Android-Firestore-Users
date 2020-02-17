@@ -5,23 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.navArgs
-import com.vikingsen.inject.viewmodel.ViewModelFactory
+import org.koin.android.viewmodel.ext.android.viewModel
 import pe.kreatec.android_firestore_users.R
 import pe.kreatec.android_firestore_users.databinding.ActivityUserDetailsBinding
-import pe.kreatec.android_firestore_users.inject.Injector
-import javax.inject.Inject
 
 class UserDetailsActivity : AppCompatActivity() {
 
-    @Inject lateinit var viewModelFactory: ViewModelFactory
-    private val viewModel by lazy { viewModelFactory.create(UserDetailsViewModel::class.java) }
+    private val viewModel by viewModel<UserDetailsViewModel>()
 
     private val args: UserDetailsActivityArgs by navArgs()
     private lateinit var binding: ActivityUserDetailsBinding
 
-    init {
-        Injector.get().inject(this)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

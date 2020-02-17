@@ -1,21 +1,25 @@
 package pe.kreatec.android_firestore_users
 
 import android.app.Application
-import pe.kreatec.android_firestore_users.inject.AppModule
-import pe.kreatec.android_firestore_users.inject.Injector
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
+import pe.kreatec.android_firestore_users.inject.appModule
 import timber.log.Timber
 
 class App : Application() {
 
-    init {
-        Injector.init(AppModule(this))
-    }
-
     override fun onCreate() {
         super.onCreate()
 
-        Injector.get().inject(this)
+        initKoin()
         if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
+    }
+
+    private fun initKoin() {
+        startKoin {
+            androidContext(this@App)
+            modules(listOf(appModule))
+        }
     }
 
 }

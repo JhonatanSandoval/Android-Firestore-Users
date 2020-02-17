@@ -1,7 +1,6 @@
 package pe.kreatec.android_firestore_users.ux.users
 
 import androidx.lifecycle.ViewModel
-import com.vikingsen.inject.viewmodel.ViewModelInject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import pe.kreatec.android_firestore_users.firebase.model.User
@@ -12,7 +11,7 @@ import pe.kreatec.android_firestore_users.util.scope.ioScope
 import timber.log.Timber
 
 class UsersViewModel
-@ViewModelInject constructor(
+constructor(
     private val userRepository: UserRepository
 ) : ViewModel(), CoroutineScope by ioScope() {
 

@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.vikingsen.inject.viewmodel.ViewModelFactory
+import org.koin.android.viewmodel.ext.android.viewModel
 import pe.kreatec.android_firestore_users.R
 import pe.kreatec.android_firestore_users.databinding.FragmentUsersBinding
-import pe.kreatec.android_firestore_users.inject.Injector
 import pe.kreatec.android_firestore_users.util.ui.BaseFragment
-import javax.inject.Inject
 
 class UsersFragment : BaseFragment<FragmentUsersBinding>() {
 
@@ -19,14 +17,8 @@ class UsersFragment : BaseFragment<FragmentUsersBinding>() {
 
     private val navController by lazy { NavHostFragment.findNavController(this) }
 
-    @Inject lateinit var viewModelFactory: ViewModelFactory
-    private val viewModel by lazy { viewModelFactory.create(UsersViewModel::class.java) }
-
+    private val viewModel by viewModel<UsersViewModel>()
     private val adapter by lazy { UsersAdapter(viewModel) }
-
-    init {
-        Injector.get().inject(this)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         bindView(inflater, container)
